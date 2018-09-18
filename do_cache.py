@@ -38,6 +38,7 @@ except ImportError:
     import json
 from logging import warning, info
 from functools import wraps
+# from time import time
 from hashlib import md5
 from datetime import date
 
@@ -80,6 +81,7 @@ def do_cache(cache_type, expire=60 * 5, with_user=True):
         """Decorator the class func"""
         @wraps(method)
         def wrapper(self, *args, **kwargs):
+            # start_time = time()
             try:
                 # Deal with only GET method, return method while not GET method
                 if self.request.method != 'GET':
@@ -123,6 +125,9 @@ def do_cache(cache_type, expire=60 * 5, with_user=True):
             except Exception as e:
                 warning(traceback.format_exc())
             finally:
+                # spend = round(1000 * (time() - start_time), 3)
+                # warning('方法: {_class}.{func}, 消耗: {spend} ms'.format(
+                #     _class=self.__class__.__name__, func=method.__name__, spend=spend))
                 # return none when do not use gen.coroutine and return gen.Return(data) when gen.coroutine
                 # refer tornado/web.py func:_execute() line:1540-1543
                 return
