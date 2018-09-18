@@ -1,2 +1,2 @@
-# diyidan_utils
-Utils write for DiYiDan
+# do_utils
+Utils write for common usage.
