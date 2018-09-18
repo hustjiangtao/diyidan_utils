@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # -*- author: Jiangtao -*-
 
-"""Do cache for GET request url handler
+"""Do cache for GET request url handler in Tornado server
 do_cache:
     do cahche for request with uri & user & params
     cache_key include (protocol, host_name, path, md5(current_user, params))
