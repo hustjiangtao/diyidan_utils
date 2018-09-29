@@ -30,7 +30,7 @@ __date__ = '2018/09/18'
 
 setup(
     name='do-utils',                                             # 名称
-    version='0.0.1',                                             # 版本号
+    version='0.0.2',                                             # 版本号
     author='jiangtao',                                           # 作者
     author_email='jiangtao.work@gmail.com',                      # 邮箱
     description='Utils for tornado api cache, function timer.',  # 简单描述, 显示在PyPI上
