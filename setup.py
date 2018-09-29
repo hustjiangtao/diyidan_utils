@@ -53,7 +53,9 @@ setup(
         'do_cache',
         'do_time',
     ],                                                           # 关键字
-    install_requires=read_requirements('requirements.txt'),      # 指定需要安装的依赖
+    install_requires=[
+        'ujson==1.35'
+    ],                                                           # 指定需要安装的依赖
     include_package_data=True,
     zip_safe=True,
     python_requires='>=2.7.14',                                  # python环境

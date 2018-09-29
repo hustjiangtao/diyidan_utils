@@ -56,3 +56,19 @@ class ApiHandler(object):
     def get(self):
         print 'get template'
 ```
+
+## Change History
+
+- v0.0.1
+
+```text
+do utils
+do api/template cache for tornado server with redis
+```
+
+- v0.0.2
+
+```text
+bugfix for install_requires cannot using 'requirements.txt'
+add prefix for cache_key: 'cache:'
+```

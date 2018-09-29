@@ -90,7 +90,7 @@ def do_cache(cache_type, expire=60 * 5, with_user=True):
                 r_cache = self.r_cache
                 cache_count(r_cache, 'total')
                 # get cached data, return cached data if not none
-                redis_key = generate_key(req_handler=self, with_user=with_user)
+                redis_key = 'cache:' + generate_key(req_handler=self, with_user=with_user)
                 cache_data = r_cache.get(redis_key)
                 if cache_data is not None:
                     info('return cached data: key=%s, data_length=%s' %(redis_key, len(cache_data)))
