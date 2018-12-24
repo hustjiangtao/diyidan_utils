@@ -21,6 +21,26 @@ from functools import wraps
 from time import time
 
 
+def format_time(spend):
+    """format the given time"""
+    spend = float(spend)
+    if spend < 0:
+        raise ValueError('time must > 0')
+    elif spend < 1000:
+        result = spend, 'ms'
+    elif spend < 1000 * 60:
+        result = spend / 1000, 's'
+    elif spend < 1000 * 60 * 60:
+        result = spend / 1000 / 60, 'min'
+    elif spend < 1000 * 60 * 60 * 24:
+        result = spend / 1000 / 60 / 60, 'h'
+    else:
+        result = spend / 1000 / 60 / 60 / 24, 'd'
+    result = '{:.3f} {}'.format(*result)
+
+    return result
+
+
 def do_class_time(method):
     """Get the given class function time"""
     @wraps(method)
