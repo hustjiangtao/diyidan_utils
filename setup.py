@@ -30,7 +30,7 @@ __date__ = '2018/09/18'
 
 setup(
     name='do-utils',                                             # 名称
-    version='0.0.2',                                             # 版本号
+    version='0.0.3',                                             # 版本号
     author='jiangtao',                                           # 作者
     author_email='jiangtao.work@gmail.com',                      # 邮箱
     description='Utils for tornado api cache, function timer.',  # 简单描述, 显示在PyPI上
@@ -54,7 +54,9 @@ setup(
         'do_time',
     ],                                                           # 关键字
     install_requires=[
-        'ujson==1.35'
+        'ujson==1.35',
+        'xlwt>=1.3.0,<=2.0.0',
+        'openpyxl>=2.6.2,<=3.0.0',
     ],                                                           # 指定需要安装的依赖
     include_package_data=True,
     zip_safe=True,

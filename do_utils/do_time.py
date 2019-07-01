@@ -6,17 +6,17 @@ count func time with decorator
 
 Usage:
     @do_time()
-    def do_print():
-        print len([x for x in xrange(10000)])
+    def do_test():
+        return len([x for x in xrange(10000)])
 
     class A(object):
         @do_time(func=False)
-        def do_print(self):
-            print len([x for x in xrange(10000)])
+        def do_test(self):
+            return len([x for x in xrange(10000)])
 """
 
 
-from logging import warning
+from logging import warning, info
 from functools import wraps
 from time import time
 
@@ -80,20 +80,20 @@ def do_time(func=True):
 
 
 @do_time()
-def do_print():
-    print len([x for x in xrange(10000)])
+def do_test():
+    info(len([x for x in xrange(10000)]))
 
 
 class A(object):
     @do_time(func=False)
-    def do_print(self):
-        print len([x for x in xrange(10000)])
+    def do_test(self):
+        info(len([x for x in xrange(10000)]))
 
 
 if __name__ == '__main__':
-    do_print()
+    do_test()
     a = A()
-    a.do_print()
+    a.do_test()
 
 
 __all__ = ['do_time']

@@ -72,3 +72,9 @@ do api/template cache for tornado server with redis
 bugfix for install_requires cannot using 'requirements.txt'
 add prefix for cache_key: 'cache:'
 ```
+
+- v0.0.3
+
+```text
+bugfix for Python3 and dependence
+```

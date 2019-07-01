@@ -23,11 +23,11 @@ Usage:
     class ApiHandler(object):
         @do_api_cache(10)
         def get(self):
-            print 'get api'
+            return 'get api'
 
         @do_temp_cache(10, with_user=False)
         def get(self):
-            print 'get template'
+            return 'get template'
 """
 
 
